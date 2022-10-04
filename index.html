@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="sudoku.js"></script>
+  <!-- <script type="text/javascript" src="analytics.js"></script> -->
+  <style type="text/css">
+    
+    @import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Amatic+SC:wght@700&family=Anek+Gujarati:wght@700&family=Baloo+Da+2:wght@559&family=Barlow&family=Bebas+Neue&family=Berkshire+Swash&family=Bree+Serif&family=Dancing+Script&family=Francois+One&family=Montserrat:wght@600&family=Nanum+Myeongjo:wght@700&family=Nunito:wght@600&family=Orelega+One&family=Oswald&family=PT+Sans+Caption&family=PT+Serif&family=Padauk:wght@700&family=Passion+One:wght@700&family=Pontano+Sans&family=Poppins:wght@400;500;700&family=Pragati+Narrow&family=Prata&family=Roboto:wght@100;300;700&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Saira:wght@600&family=Send+Flowers&family=Signika+Negative:wght@300;400&family=Space+Grotesk:wght@500&family=Space+Mono&family=Work+Sans:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Anek+Gujarati:wght@700&family=Baloo+Da+2:wght@559&family=Barlow&family=Bebas+Neue&family=Berkshire+Swash&family=Bree+Serif&family=Dancing+Script&family=Montserrat:wght@600&family=Nanum+Myeongjo:wght@700&family=Nunito:wght@600&family=Orelega+One&family=Oswald&family=PT+Sans+Caption&family=PT+Serif&family=Padauk:wght@700&family=Passion+One:wght@700&family=Pontano+Sans&family=Poppins:wght@400;500;700&family=Pragati+Narrow&family=Prata&family=Roboto+Condensed&family=Roboto:wght@100;300;700&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Saira:wght@600&family=Send+Flowers&family=Signika+Negative:wght@300;400&family=Space+Grotesk:wght@500&family=Space+Mono&family=Work+Sans:wght@600&display=swap');
+
+    body { font-family: 'Francois One', sans-serif; background:#b13eb133;}
+    #container { text-align: center }
+    table {border-collapse: collapse; font-size: 2vw; margin: 0 auto;}
+    colgroup, tbody { border: 1px solid black; }
+    td { border: solid thin; min-height: 1.4vh; width: 3vw; text-align: center; padding: 0;  color: purple;;}
+    button { margin-top: 15px; font-size: 1.5em; background-color: beige; color: #FF3366; border-radius: 5px;}
+    #line1 {color: #CC0066}
+    #line3{color: #CC0066;}
+    .padd{padding-bottom: 10px; color: purple;}
+    #inst{color: purple;}
+    #inst1 {color: #CC0066;}
+     
+    @media(max-width: 477px) {
+
+      table #sudoku-board {
+        height: 100vh;
+        width: 100vh;
+    }
+
+  </style>
+</head>
+<body>
+  
+    
+  <div id="container">
+    <!-- <img src="gfg.png" style = "height:100px ; width: 400px; align ="left" "  > -->
+    
+    <h1 class = "padd">Sudoku Solver</h1>
+
+    <h2 id="line1">Got stuck in a Sudoku Puzzle? No worries!</h2>
+    <h2 id="line3">This application can solve it for you!</h2>
+    <h2 id="inst">Instructions</h2>
+    <h3 id="inst1">Fill in the cells with desired numbers [1-9] and press the "Solve!" button</h3>
+    <table id="sudoku-board">
+      
+      
+      <colgroup><col><col><col>
+      <colgroup><col><col><col>
+      <colgroup><col><col><col>
+      <tbody>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+      <tbody>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+      <tbody>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+    </table>
+    <div>
+      <button id="solve-button">Solve!</button>
+    </div>
+    <div>
+      <button id="clear-button">Clear board</button>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  document.getElementById("sudoku-board").addEventListener("keyup", function(event) {
+    if(event.target && event.target.nodeName == "TD") {
+      var validNum = /[1-9]/;
+      var tdEl = event.target;
+      if (tdEl.innerText.length > 0 && validNum.test(tdEl.innerText[0])) {
+        tdEl.innerText = tdEl.innerText[0];
+      } else {
+        tdEl.innerText = "";
+      }
+    }
+  });
+
+  document.getElementById("solve-button").addEventListener("click", function(event) {
+    var boardString = boardToString();
+    var solution = SudokuSolver.solve(boardString);
+    if (solution) {
+      stringToBoard(solution);
+    } else {
+      alert("Invalid board!");
+    }
+  })
+
+  document.getElementById("clear-button").addEventListener("click", clearBoard);
+
+  function clearBoard() {
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      tds[i].innerText = "";
+    }
+  }
+
+  function boardToString() {
+    var string = "";
+    var validNum = /[1-9]/;
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      if (validNum.test(tds[i].innerText[0])) {
+        string += tds[i].innerText;
+      } else {
+        string += "-";
+      }
+    }
+    return string;
+  }
+
+  function stringToBoard(string) {
+    var currentCell;
+    var validNum = /[1-9]/;
+    var cells = string.split("");
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      currentCell = cells.shift();
+      if (validNum.test(currentCell)) {
+        tds[i].innerText = currentCell;
+      }
+    }
+  }
+</script>
+</html>
